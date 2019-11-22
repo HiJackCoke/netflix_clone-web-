@@ -51,14 +51,14 @@ export default class extends Component {
 
         const {nowPlaying, popular, upcoming, loading, error} = this.state;
 
-
+        console.log(nowPlaying);
 
         return (
             <HomePresenter
-                loading={loading}
                 nowPlaying={nowPlaying}
                 popular={popular}
                 upcoming={upcoming}
+                loading={loading}
                 error={error}
             />
         );

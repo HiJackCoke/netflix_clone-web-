@@ -1,9 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import Loader from "../../Components/Loader";
 
 const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) =>
-  <div>{nowPlaying}</div>;
+
+    loading ? (
+        <Loader/>
+      ) : (
+        <h1>{nowPlaying}</h1>
+      )
+
 
 
 HomePresenter.propTypes = {

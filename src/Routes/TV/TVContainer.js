@@ -46,12 +46,13 @@ export default class extends Component {
     render() {
         const {topRated, popular, airingToday, loading, error} = this.state;
         console.log(topRated);
+
         return (
             <TVPresenter
-                loading={loading}
                 topRated={topRated}
                 popular={popular}
                 airingToday={airingToday}
+                loading={loading}
                 error={error}
             />
         );
