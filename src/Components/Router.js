@@ -9,6 +9,7 @@ import Home from "../Routes/Home";
 import Search from "../Routes/Search";
 import TV from "../Routes/TV";
 import Header from "./Header";
+import Detail from "../Routes/Detail";
 
 export default () => (
   <Router>
@@ -18,6 +19,8 @@ export default () => (
             <Route path="/" exact component={Home}/>
             <Route path="/search" exact component={Search}/>
             <Route path="/tv" exact component={TV}/>
+            <Route path="/movie/:id" component={Detail}/>
+            <Route pate="/show/:id" component={Detail}/>
             <Redirect from="*" to="/"/>
         </Switch>
       </>
