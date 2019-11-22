@@ -3,15 +3,31 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
 
-const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) =>
+const Container = styled.div`
+
+  padding: 20px 10px;
+`;
+
+const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) =>(
 
     loading ? (
         <Loader/>
       ) : (
-        <h1>{nowPlaying}</h1>
+        <Container>
+          {nowPlaying.map(movie =>
+              <span key={movie.id}>{movie.title}</span>
+          )}
+          {popular.map(movie =>
+              <span key={movie.id}>{movie.title}</span>
+          )}
+          {upcoming.map(movie =>
+              <span key={movie.id}>{movie.title}</span>
+          )}
+        </Container>
+
       )
 
-
+);
 
 HomePresenter.propTypes = {
   nowPlaying : PropTypes.array,

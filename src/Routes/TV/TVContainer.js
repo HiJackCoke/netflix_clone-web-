@@ -24,13 +24,13 @@ export default class extends Component {
                 data : {
                     results : popular
                 }
-            } = await tvapi.popular()
+            } = await tvapi.popular();
 
             const {
                 data : {
                     results : airingToday
                 }
-            } = await tvapi.airingToday()
+            } = await tvapi.airingToday();
 
             this.setState({topRated, popular, airingToday});
 
