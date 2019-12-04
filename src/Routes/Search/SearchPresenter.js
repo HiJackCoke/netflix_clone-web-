@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
 import Section from "../../Components/Section";
-
+import Poster from "../../Components/poster";
 
 
 const Container = styled.div`
@@ -51,14 +51,26 @@ class SearchPresenter extends Component {
                         {movieResults && movieResults.length > 0 && (
                             <Section title="Movie Results">
                                 {movieResults.map(movie => (
-                                    <span key={movie.id}>{movie.title}</span>
+                                    <Poster
+                                        title={movie.title}
+                                        year={movie.release_date}
+                                        rating={movie.vote_average}
+                                        id={movie.id}
+                                        imageURL={movie.poster_path}
+                                    />
                                 ))}
                             </Section>
                         )}
                         {tvResults && tvResults.length > 0 && (
                             <Section title="TV Results">
                                 {tvResults.map(show => (
-                                    <span key={show.iod}>{show.name}</span>
+                                    <Poster
+                                        title={show.name}
+                                        year={show.first_air_date}
+                                        rating={show.vote_average}
+                                        id={show.id}
+                                        imageURL={show.poster_path}
+                                    />
                                 ))}
                             </Section>
                         )}
