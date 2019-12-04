@@ -27,6 +27,7 @@ const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) =>(
                        rating={movie.vote_average}
                        id={movie.id}
                        imageURL={movie.poster_path}
+                       isMovie={true}
                    />
                 )}
               </Section>
@@ -41,6 +42,7 @@ const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) =>(
                         rating={movie.vote_average}
                         id={movie.id}
                         imageURL={movie.poster_path}
+                        isMovie={true}
                     />
                 )}
               </Section>
@@ -55,6 +57,7 @@ const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) =>(
                         rating={movie.vote_average}
                         id={movie.id}
                         imageURL={movie.poster_path}
+                        isMovie={true}
                     />
                 )}
               </Section>
