@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Loader from "../../Components/Loader";
 import Section from "../../Components/Section";
 import Message from "../../Components/Message";
+import Poster from "../../Components/poster";
 
 const Container = styled.div`
 
@@ -19,21 +20,42 @@ const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) =>(
           {nowPlaying && nowPlaying.length > 0 && (
               <Section title="nowPlaying">
                 {nowPlaying.map(movie =>
-                    <span key={movie.id}>{movie.title}</span>
+                   <Poster
+                       key={movie.id}
+                       title={movie.title}
+                       year={movie.release_date}
+                       rating={movie.vote_average}
+                       id={movie.id}
+                       imageURL={movie.poster_path}
+                   />
                 )}
               </Section>
           )}
           {popular && popular.length > 0 && (
               <Section title="popular">
                 {popular.map(movie =>
-                    <span key={movie.id}>{movie.title}</span>
+                    <Poster
+                        key={movie.id}
+                        title={movie.title}
+                        year={movie.release_date}
+                        rating={movie.vote_average}
+                        id={movie.id}
+                        imageURL={movie.poster_path}
+                    />
                 )}
               </Section>
           )}
           {upcoming && upcoming.length > 0 && (
               <Section title="upcoming">
                 {upcoming.map(movie =>
-                    <span key={movie.id}>{movie.title}</span>
+                    <Poster
+                        key={movie.id}
+                        title={movie.title}
+                        year={movie.release_date}
+                        rating={movie.vote_average}
+                        id={movie.id}
+                        imageURL={movie.poster_path}
+                    />
                 )}
               </Section>
           )}

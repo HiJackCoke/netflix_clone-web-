@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
 import Section from "../../Components/Section";
+import Poster from "../../Components/poster";
 
 const Container = styled.div`
   
@@ -20,21 +21,42 @@ const TVPresenter = ({topRated, popular, airingToday, loading, error}) => (
                 {topRated && topRated.length > 0 && (
                     <Section title="topRated">
                         {topRated.map(show =>
-                            <span key={show.id}>{show.name}</span>
+                            <Poster
+                                key={show.id}
+                                title={show.name}
+                                year={show.first_air_date}
+                                rating={show.vote_average}
+                                id={show.id}
+                                imageURL={show.poster_path}
+                            />
                         )}
                     </Section>
                 )}
                 {popular && popular.length > 0 && (
                     <Section title="popular">
                         {popular.map(show =>
-                            <span key={show.id}>{show.name}</span>
+                            <Poster
+                                key={show.id}
+                                title={show.name}
+                                year={show.first_air_date}
+                                rating={show.vote_average}
+                                id={show.id}
+                                imageURL={show.poster_path}
+                            />
                         )}
                     </Section>
                 )}
                 {airingToday && airingToday.length > 0 && (
                     <Section title="airingToday">
                         {airingToday.map(show =>
-                            <span key={show.id}>{show.name}</span>
+                            <Poster
+                                key={show.id}
+                                title={show.name}
+                                year={show.first_air_date}
+                                rating={show.vote_average}
+                                id={show.id}
+                                imageURL={show.poster_path}
+                            />
                         )}
                     </Section>
                 )}

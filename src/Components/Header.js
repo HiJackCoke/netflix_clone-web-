@@ -7,7 +7,6 @@ const Header = styled.header`
   color: white;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 50px;
   display: flex;
@@ -19,12 +18,15 @@ const Header = styled.header`
 
 const List = styled.ul`
   display: flex;
+  margin-left: 30px;
 `;
 
 const Item = styled.li`
   width: 80px;
   height: 50px;
   text-align: center;
+  font-size: 18px;
+  font-weight: 600;
   border-bottom: 3px solid
     ${props => (props.current ? "#3498db" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
