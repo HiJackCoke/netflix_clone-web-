@@ -18,12 +18,7 @@ class DetailContainer extends Component {
         };
     }
     async componentDidMount() {
-        const {
-            match: {
-                params: { id }
-            },
-            history: { push }
-        } = this.props;
+        const { match: {params: { id } }, history: { push } } = this.props;
         const { isMovie } = this.state;
         const parsedId = parseInt(id);
         if (isNaN(parsedId)) {

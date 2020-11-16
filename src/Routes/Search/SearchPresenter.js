@@ -28,7 +28,6 @@ class SearchPresenter extends Component {
         let {
             movieResults,
             tvResults,
-            error,
             searchTerm,
             loading,
             updateTerm,
