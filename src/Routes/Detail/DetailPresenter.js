@@ -52,7 +52,7 @@ const Title = styled.span`
  margin: 20px 10px;
 `;
 
-const Rating = styled.span`
+const Vote = styled.span`
   font-size: 15px;
   margin: 10px;
 `;
@@ -101,13 +101,13 @@ const DetailPresenter = ({
 
                 <Data>
                     <Title>{result.original_title}</Title>
+
                     <Year>{result.release_date}</Year>
-                    {/*<Rating*/}
-                    {/*      role="img"*/}
-                    {/*      aria-label="vote"*/}
-                    {/*  >*/}
-                    {/*    ⭐  {" "} {result.vote_average} {" "} / {" "}10*/}
-                    {/*</Rating>*/}
+                    <Vote
+
+                    >
+                        {" "} {result.vote_average} {" "} / {" "}10
+                    </Vote>
 
 
                     <Overview>

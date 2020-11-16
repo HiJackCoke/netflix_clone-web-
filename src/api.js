@@ -35,7 +35,7 @@ export const tvApi = {
     airingToday : () => getAnything("tv/airing_today"),
     popular: () => getAnything("/tv/popular"),
     topRated: () => getAnything("/tv/top_rated"),
-    showDetail: (id) => getAnything(`/tv/${id}`, { append_to_response: "vidoes" }),
+    showDetail: (id) => getAnything(`/tv/${id}`, { append_to_response: "videos" }),
     search: (query) => getAnything("/search/tv", { query }),
     similar: (id) => getAnything(`/tv/${id}/similar`),
 };
