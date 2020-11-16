@@ -102,7 +102,9 @@ const DetailPresenter = ({
                 <Data>
                     <Title>{result.original_title}</Title>
                     <Year>{result.release_date}</Year>
-                    <Rating>
+                    <Rating
+                        role="img"
+                    >
                         ⭐  {" "} {result.vote_average} {" "} / {" "}10
                     </Rating>
 
