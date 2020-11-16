@@ -104,6 +104,7 @@ const DetailPresenter = ({
                     <Year>{result.release_date}</Year>
                     <Rating
                         role="img"
+                        aria-label="vote"
                     >
                         ⭐  {" "} {result.vote_average} {" "} / {" "}10
                     </Rating>
