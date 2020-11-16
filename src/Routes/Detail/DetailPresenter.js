@@ -102,12 +102,13 @@ const DetailPresenter = ({
                 <Data>
                     <Title>{result.original_title}</Title>
                     <Year>{result.release_date}</Year>
-                    <Rating
-                        role="img"
-                        aria-label="vote"
-                    >
-                        ⭐  {" "} {result.vote_average} {" "} / {" "}10
-                    </Rating>
+                    {/*<Rating*/}
+                    {/*      role="img"*/}
+                    {/*      aria-label="vote"*/}
+                    {/*  >*/}
+                    {/*    ⭐  {" "} {result.vote_average} {" "} / {" "}10*/}
+                    {/*</Rating>*/}
+
 
                     <Overview>
                         {result.overview}
