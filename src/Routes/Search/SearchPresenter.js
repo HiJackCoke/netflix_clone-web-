@@ -26,8 +26,8 @@ class SearchPresenter extends Component {
     render() {
 
         let {
-            movieResults,
-            tvResults,
+            movies,
+            shows,
             searchTerm,
             loading,
             updateTerm,
@@ -47,9 +47,9 @@ class SearchPresenter extends Component {
                     <Loader/>
                 ): (
                     <>
-                        {movieResults && movieResults.length > 0 && (
+                        {movies && movies.length > 0 && (
                             <Section title="Movie Results">
-                                {movieResults.map(movie => (
+                                {movies.map(movie => (
                                     <Poster
                                         title={movie.title}
                                         year={movie.release_date}
@@ -60,9 +60,9 @@ class SearchPresenter extends Component {
                                 ))}
                             </Section>
                         )}
-                        {tvResults && tvResults.length > 0 && (
+                        {shows && shows.length > 0 && (
                             <Section title="TV Results">
-                                {tvResults.map(show => (
+                                {shows.map(show => (
                                     <Poster
                                         title={show.name}
                                         year={show.first_air_date}

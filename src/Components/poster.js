@@ -51,7 +51,7 @@ const Year = styled.span`
 
 
 const Poster = ({id, imageURL, title, rating, year, isMovie = false}) => (
-    <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
+    <Link to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
         <Container>
             <ImageContainer>
                 <Image bgUrl={imageURL ? `https://image.tmdb.org/t/p/w300${imageURL}` : require("../assets/empty.png")} />

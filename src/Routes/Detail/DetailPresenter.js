@@ -67,13 +67,14 @@ const Year = styled.span`
   margin-left: 10px;
 `;
 
-const Imdb = styled.image``;
+const Similar = styled.div``;
 
 
 
 
 const DetailPresenter = ({
     result,
+    simliar,
     loading,
     error
 }) => (
@@ -81,8 +82,13 @@ const DetailPresenter = ({
         <Loader/>
     ) : (
         <Container>
+
             <Backdrop
-                bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
+                bgImage={
+                    result.backdrop_path
+                    ? `https://image.tmdb.org/t/p/original${result.backdrop_path}`
+                    : require("../../assets/empty.png")
+                }
             />
             <Content>
                 <Cover
@@ -103,8 +109,6 @@ const DetailPresenter = ({
                     <Overview>
                         {result.overview}
                     </Overview>
-
-                
                 </Data>
 
 
@@ -116,11 +120,12 @@ const DetailPresenter = ({
 );
 
 
-
-DetailPresenter.propTypes ={
-    result : PropTypes.array,
-    loading : PropTypes.bool.isRequired,
-    error : PropTypes.string
-};
+//
+// DetailPresenter.propTypes ={
+//     result : PropTypes.array,
+//     similar: PropTypes.array,
+//     loading : PropTypes.bool.isRequired,
+//     error : PropTypes.string
+// };
 
 export default DetailPresenter;
