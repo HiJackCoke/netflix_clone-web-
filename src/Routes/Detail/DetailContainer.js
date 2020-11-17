@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 
 import {useParams, useLocation} from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import DetailPresenter from "./DetailPresenter";
 const DetailContainer = () => {
 
     let {id} = useParams();
-    console.log(id)
+
     let location = useLocation()
 
     const [detail, setDetail] = useState({
@@ -19,7 +19,7 @@ const DetailContainer = () => {
         loading: true
     })
 
-    const getData = async () => {
+    const getData = useCallback(async () => {
 
 
         const [result, resultError] = location.pathname.includes("/movie/")
@@ -37,11 +37,11 @@ const DetailContainer = () => {
             similarError,
             loading: false
         })
-    }
+    }, [id, location.pathname])
 
     useEffect(() => {
         getData()
-    }, [id])
+    }, [getData])
 
     return (
         <DetailPresenter {...detail}/>

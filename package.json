@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.1",
+    "eslint-plugin-react-hooks": "^0.0.0-8e5adfbd7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
