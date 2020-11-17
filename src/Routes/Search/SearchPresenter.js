@@ -51,6 +51,7 @@ class SearchPresenter extends Component {
                             <Section title="Movie Results">
                                 {movies.map(movie => (
                                     <Poster
+                                        key={movie.id}
                                         title={movie.title}
                                         year={movie.release_date}
                                         rating={movie.vote_average}
@@ -64,6 +65,7 @@ class SearchPresenter extends Component {
                             <Section title="TV Results">
                                 {shows.map(show => (
                                     <Poster
+                                        key={show.id}
                                         title={show.name}
                                         year={show.first_air_date}
                                         rating={show.vote_average}

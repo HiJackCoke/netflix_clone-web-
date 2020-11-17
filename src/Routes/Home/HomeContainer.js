@@ -18,7 +18,7 @@ const HomeContainer = () => {
         const [nowPlaying, nowPlayingError] = await movieApi.nowPlaying()
         const [popular, popularError] = await movieApi.popular()
         const [upcoming, upcomingError] = await movieApi.upcoming()
-        console.log("=======++++++", nowPlaying)
+
         setMovies({
             nowPlaying,
             popular,

@@ -5,10 +5,11 @@ import {useParams, useLocation} from 'react-router-dom';
 import {movieApi, tvApi} from '../../api'
 import DetailPresenter from "./DetailPresenter";
 
-const DetailContainer = ({pathname}) => {
+const DetailContainer = () => {
 
     let {id} = useParams();
-    let loaction = useLocation()
+    console.log(id)
+    let location = useLocation()
 
     const [detail, setDetail] = useState({
         result: {},
@@ -21,11 +22,11 @@ const DetailContainer = ({pathname}) => {
     const getData = async () => {
 
 
-        const [result, resultError] = loaction.pathname.includes("/movie/")
+        const [result, resultError] = location.pathname.includes("/movie/")
         ? await movieApi.movieDetail(id)
         : await tvApi.showDetail(id)
 
-        const [similar, similarError] = loaction.pathname.includes('/movie/')
+        const [similar, similarError] = location.pathname.includes('/movie/')
         ? await movieApi.similar(id)
         : await tvApi.similar(id)
 
@@ -36,21 +37,15 @@ const DetailContainer = ({pathname}) => {
             similarError,
             loading: false
         })
-
-        console.log("=====", result)
     }
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [id])
 
     return (
         <DetailPresenter {...detail}/>
-        // <div>
-        //     <text>
-        //         {id}
-        //     </text>
-        // </div>
+
     );
 };
 

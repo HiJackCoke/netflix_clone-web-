@@ -28,7 +28,6 @@ const TVPresenter = ({topRated, popular, airingToday, loading, error}) => (
                                 rating={show.vote_average}
                                 id={show.id}
                                 imageURL={show.poster_path}
-                                isMovie={false}
                             />
                         )}
                     </Section>
@@ -43,7 +42,6 @@ const TVPresenter = ({topRated, popular, airingToday, loading, error}) => (
                                 rating={show.vote_average}
                                 id={show.id}
                                 imageURL={show.poster_path}
-                                isMovie={false}
                             />
                         )}
                     </Section>
@@ -58,7 +56,6 @@ const TVPresenter = ({topRated, popular, airingToday, loading, error}) => (
                                 rating={show.vote_average}
                                 id={show.id}
                                 imageURL={show.poster_path}
-                                isMovie={false}
                             />
                         )}
                     </Section>

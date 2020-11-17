@@ -28,6 +28,8 @@ const TVContainer = () => {
             airingTodayError,
             loading: false
         })
+
+        console.log("=======++++++", airingToday)
     }
 
     useEffect(() => {
