@@ -2,7 +2,8 @@ import React from 'react';
 
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
-
+import Section from "../../Components/Section";
+import SimilarPoster from "../../Components/SimilarPoster";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -40,43 +41,44 @@ const Cover = styled.div`
   background-size: cover;
   height: 100%;
   border-radius: 5px;
+  flex: none
+  
 `;
 
 const Data = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const Title = styled.span`
  font-size: 30px;
- margin: 20px 10px;
+ margin: 0px 20px 20px;
 `;
 
 const Vote = styled.span`
   font-size: 15px;
-  margin: 10px;
+  margin: 10px 20px 10px;
+
 `;
 
 const Overview = styled.span`
   font-size: 15px;
-  margin: 10px;
+  margin: 10px 20px 10px;
 `;
 
 const Year = styled.span`
-  margin-bottom: 10px;
-  margin-left: 10px;
+   margin: 10px 20px 10px;
 `;
 
-
-
-
-
+const Similar = styled.div`
+  margin-left: 20px;
+`;
 
 const DetailPresenter = ({
     result,
-    simliar,
-    loading,
-    error
+    similar,
+    loading
 }) => (
     loading ? (
         <Loader/>
@@ -91,6 +93,7 @@ const DetailPresenter = ({
                 }
             />
             <Content>
+
                 <Cover
                     bgImage={
                         result.poster_path
@@ -99,13 +102,13 @@ const DetailPresenter = ({
                     }
                 />
 
+
                 <Data>
-                    <Title>{result.original_title}</Title>
+                    <Title>{result.original_title || result.name}</Title>
 
-                    <Year>{result.release_date}</Year>
-                    <Vote
-
-                    >
+                    <Year>{result.release_date || result.first_air_date}</Year>
+                    <Vote>
+                        <span role="img" aria-label="rating">⭐️</span>
                         {" "} {result.vote_average} {" "} / {" "}10
                     </Vote>
 
@@ -113,12 +116,27 @@ const DetailPresenter = ({
                     <Overview>
                         {result.overview}
                     </Overview>
+
+                    <Similar>
+                        <Section title="Similar">
+                            {similar.map((similar) => (
+                                <SimilarPoster
+                                    key={similar.id}
+                                    id={similar.id}
+                                    imageURL={similar.poster_path}
+                                    title={similar.original_title || similar.original_name}
+                                    rating={similar.vote_average}
+                                />
+                            ))}
+                        </Section>
+                    </Similar>
                 </Data>
 
 
-
-
             </Content>
+
+
+
         </Container>
     )
 );

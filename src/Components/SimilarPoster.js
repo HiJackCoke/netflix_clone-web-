@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-
 const Container = styled.div`
   font-size: 12px;
 `;
@@ -43,37 +42,28 @@ const Title = styled.span`
   margin-bottom: 3px;
 `;
 
-const Year = styled.span`
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-`;
 
+const SimilarPoster = ({id, imageURL, name, title, rating}) => (
 
-
-const Poster = ({id, imageURL, title, rating, year, isMovie = false}) => (
-
-    <Link to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
+    // <Link to={ title !== name ? `/movie/${id}` : `/tv/${id}`}>
         <Container>
             <ImageContainer>
-                <Image bgUrl={imageURL ? `https://image.tmdb.org/t/p/w300${imageURL}` : require("../assets/empty.png")} />
+                <Image bgUrl={imageURL ? `https://image.tmdb.org/t/p/original${imageURL}` : require("../assets/empty.png")} />
                 <Rating>
                     <span role="img" aria-label="rating">⭐️</span>
                     {" "} {rating} {" "} / {" "}10
                 </Rating>
             </ImageContainer>
             <Title>{title}</Title>
-            <Year>{year}</Year>
         </Container>
-    </Link>
+    // </Link>
 );
 
-Poster.propTypes = {
+SimilarPoster.propTypes = {
     id: PropTypes.number.isRequired,
     imageURL: PropTypes.string,
     title: PropTypes.string,
     rating: PropTypes.number.isRequired,
-    year: PropTypes.string.isRequired,
-    isMovie: PropTypes.bool
 };
 
-export default Poster;
+export default SimilarPoster;
