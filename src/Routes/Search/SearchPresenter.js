@@ -57,6 +57,7 @@ class SearchPresenter extends Component {
                                         rating={movie.vote_average}
                                         id={movie.id}
                                         imageURL={movie.poster_path}
+                                        isMovie={true}
                                     />
                                 ))}
                             </Section>
