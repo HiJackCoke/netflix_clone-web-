@@ -126,6 +126,7 @@ const DetailPresenter = ({
                                     imageURL={similar.poster_path}
                                     title={similar.original_title || similar.original_name}
                                     rating={similar.vote_average}
+                                    isMovie={similar.original_title ? true : false}
                                 />
                             ))}
                         </Section>

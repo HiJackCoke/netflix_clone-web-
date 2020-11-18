@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Container = styled.div`
   font-size: 12px;
@@ -43,9 +43,9 @@ const Title = styled.span`
 `;
 
 
-const SimilarPoster = ({id, imageURL, name, title, rating}) => (
+const SimilarPoster = ({id, imageURL, name, title, rating, isMovie = false}) => (
 
-    // <Link to={ title !== name ? `/movie/${id}` : `/tv/${id}`}>
+    <Link to={ isMovie === true ? `/movie/${id}` : `/tv/${id}`}>
         <Container>
             <ImageContainer>
                 <Image bgUrl={imageURL ? `https://image.tmdb.org/t/p/original${imageURL}` : require("../assets/empty.png")} />
@@ -56,7 +56,7 @@ const SimilarPoster = ({id, imageURL, name, title, rating}) => (
             </ImageContainer>
             <Title>{title}</Title>
         </Container>
-    // </Link>
+    </Link>
 );
 
 SimilarPoster.propTypes = {
